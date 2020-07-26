@@ -1,13 +1,52 @@
-# adonis-stripe
-> Tagline
+# Adonis Stripe
+
+> Stripe provider for AdonisJS 5
 
 [![typescript-image]][typescript-url] [![npm-image]][npm-url] [![license-image]][license-url]
 
-A short brief
+This packages makes it seamless to work with Stripe in AdonisJS 5 applications.
 
 ## Installation
 
+Install the package using either npm or yarn:
+
+```bash
+npm i @mezielabs/adonis-stripe
+# or
+yarn add @mezielabs/adonis-stripe
+```
+
+Then, set up the package using the `invoke` command:
+
+```bash
+node ace invoke @mezielabs/adonis-stripe
+```
+
+This package needs to be configured with your Stripe account's API keys, which you can get from your [Stripe Dashboard](https://dashboard.stripe.com/account/apikeys). Also, you can specify the API version as well as your webhook secret.
+
+```txt
+// .env
+
+STRIPE_SECRET_KEY=YOUR_STRIPE_SECRET_KEY
+STRIPE_PUBLIC_KEY=YOUR_STRIPE_PUBLISHABLE_KEY
+STRIPE_API_VERSION=YOUR_STRIPE_SECRET_KEY // defaults to '2020-03-02'
+STRIPE_WEBHOOK_SECRET=YOUR_STRIPE_WEBHOOK_SECRET
+```
+
 ## Usage
+
+```ts
+import Stripe from '@ioc:Mezielabs/Stripe'
+
+async checkout ({ view }) {
+  paymentIntent = await Stripe.paymentIntents.create({
+    amount: 1900,
+    currency: 'usd'
+  })
+}
+```
+
+This package is built top of [`stripe-node`](https://github.com/stripe/stripe-node). For usage, see the [stripe-node API docs](https://stripe.com/docs/api?lang=node) for Node.js.
 
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
 [typescript-url]:  "typescript"
