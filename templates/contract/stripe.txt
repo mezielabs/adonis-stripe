@@ -7,8 +7,6 @@
  * file that was distributed with this source code.
  */
 
-/// <reference path="../node_modules/@mezielabs/adonis-stripe/node_modules/stripe/types/2020-03-02/index.d.ts" />
-
 declare module '@ioc:Mezielabs/Stripe' {
   import Stripe from 'stripe'
 
