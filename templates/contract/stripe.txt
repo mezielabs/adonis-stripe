@@ -1,0 +1,18 @@
+/*
+ * @mezielabs/adonis-stripe
+ *
+ * (c) Chimezie Enyinnaya <chimezie@adonismastery.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/// <reference path="../node_modules/@mezielabs/adonis-stripe/node_modules/stripe/types/2020-03-02/index.d.ts" />
+
+declare module '@ioc:Mezielabs/Stripe' {
+  import Stripe from 'stripe'
+
+  const stripe: Stripe
+
+  export default stripe
+}

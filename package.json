@@ -1,91 +1,115 @@
 {
-  "name": "@mezielabs/adonis-stripe",
-  "version": "1.0.0",
-  "description": "Stripe wrapper for AdonisJS",
-  "scripts": {
-    "mrm": "mrm --preset=@adonisjs/mrm-preset",
-    "pretest": "npm run lint",
-    "test": "node japaFile.js",
-    "clean": "del build",
-    "compile": "npm run lint && npm run clean && tsc",
-    "build": "npm run compile",
-    "prepublishOnly": "npm run build",
-    "lint": "eslint . --ext=.ts",
-    "format": "prettier --write .",
-    "commit": "git-cz",
-    "release": "np",
-    "version": "npm run build",
-    "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json mezielabs/adonis-stripe"
+	"name": "@mezielabs/adonis-stripe",
+	"version": "1.0.0",
+	"description": "Stripe provider for AdonisJS",
+	"scripts": {
+		"mrm": "mrm --preset=@adonisjs/mrm-preset",
+		"pretest": "npm run lint",
+		"test": "node japaFile.js",
+		"clean": "del build",
+		"compile": "npm run lint && npm run clean && tsc",
+		"build": "npm run compile && npm run copyfiles",
+		"copyfiles": "copyfiles \"templates/**/*\" build",
+		"prepublishOnly": "npm run build",
+		"lint": "eslint . --ext=.ts",
+		"format": "prettier --write .",
+		"commit": "git-cz",
+		"release": "np",
+		"version": "npm run build",
+		"sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json mezielabs/adonis-stripe"
 	},
 	"repository": {
-    "type": "git",
-    "url": "git+https://github.com/mezielabs/adonis-stripe.git"
-  },
-  "keywords": [
+		"type": "git",
+		"url": "git+https://github.com/mezielabs/adonis-stripe.git"
+	},
+	"keywords": [
 		"adonis",
 		"adonisjs",
 		"stripe"
 	],
-  "author": "Chimezie Enyinnaya",
+	"author": "Chimezie Enyinnaya",
 	"license": "MIT",
 	"bugs": {
-    "url": "https://github.com/mezielabs/adonis-stripe/issues"
-  },
-  "homepage": "https://github.com/mezielabs/adonis-stripe#readme",
-  "devDependencies": {
-    "@adonisjs/mrm-preset": "^2.4.0",
-    "@types/node": "^14.0.24",
-    "commitizen": "^4.1.2",
-    "cz-conventional-changelog": "^3.2.0",
-    "del-cli": "^3.0.1",
-    "doctoc": "^1.4.0",
-    "eslint": "^7.5.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-adonis": "^1.0.14",
-    "eslint-plugin-prettier": "^3.1.4",
-    "github-label-sync": "^2.0.0",
-    "husky": "^4.2.5",
-    "japa": "^3.1.1",
-    "mrm": "^2.3.3",
-    "np": "^6.3.2",
-    "npm-audit-html": "^1.4.1",
-    "prettier": "^2.0.5",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm audit --production --json | ./node_modules/.bin/npm-audit-html && git add npm-audit.html && doctoc README.md --title='## Table of contents' && git add README.md",
-      "commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
-    }
-  },
-  "nyc": {
-    "exclude": [
-      "test"
-    ],
-    "extension": [
-      ".ts"
-    ]
-  },
-  "main": "build/providers/StripeProvider.js",
-  "files": [
-  ],
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "np": {
-    "contents": ".",
-    "anyBranch": false
+		"url": "https://github.com/mezielabs/adonis-stripe/issues"
+	},
+	"homepage": "https://github.com/mezielabs/adonis-stripe#readme",
+	"devDependencies": {
+		"@adonisjs/fold": "^6.3.5",
+		"@adonisjs/mrm-preset": "^2.4.0",
+		"@types/node": "^14.0.24",
+		"commitizen": "^4.1.2",
+		"copyfiles": "^2.3.0",
+		"cz-conventional-changelog": "^3.2.0",
+		"del-cli": "^3.0.1",
+		"doctoc": "^1.4.0",
+		"eslint": "^7.5.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-adonis": "^1.0.14",
+		"eslint-plugin-prettier": "^3.1.4",
+		"github-label-sync": "^2.0.0",
+		"husky": "^4.2.5",
+		"japa": "^3.1.1",
+		"mrm": "^2.3.3",
+		"np": "^6.3.2",
+		"npm-audit-html": "^1.4.1",
+		"prettier": "^2.0.5",
+		"ts-node": "^8.10.2",
+		"typescript": "^3.9.7"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm audit --production --json | ./node_modules/.bin/npm-audit-html && git add npm-audit.html && doctoc README.md --title='## Table of contents' && git add README.md",
+			"commit-msg": "node ./node_modules/@adonisjs/mrm-preset/validateCommit/conventional/validate.js"
+		}
+	},
+	"nyc": {
+		"exclude": [
+			"test"
+		],
+		"extension": [
+			".ts"
+		]
+	},
+	"main": "build/providers/StripeProvider.js",
+	"files": [
+		"build/adonis-typings",
+		"build/providers",
+		"build/templates"
+	],
+	"types": "build/adonis-typings/index.d.ts",
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"np": {
+		"contents": ".",
+		"anyBranch": false
 	},
 	"publishConfig": {
-    "access": "public"
-  },
+		"access": "public"
+	},
 	"adonisjs": {
-		"instructions": "./build/instructions.js",
-    "providers": [
-      "@mezielabs/adonis-stripe"
-    ]
+		"types": "@mezielabs/adonis-stripe",
+		"providers": [
+			"@mezielabs/adonis-stripe"
+		],
+		"templates": {
+			"config": [
+				{
+					"src": "config/stripe.txt",
+					"dest": "stripe"
+				}
+			],
+			"contracts": [
+				{
+					"src": "contract/stripe.txt",
+					"dest": "stripe"
+				}
+			]
+		}
+	},
+	"dependencies": {
+		"stripe": "^8.77.0"
 	}
 }
