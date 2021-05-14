@@ -26,10 +26,10 @@ npm i @mezielabs/adonis-stripe
 yarn add @mezielabs/adonis-stripe
 ```
 
-Then, set up the package using the `invoke` command:
+Then, configure the package using the `configure` command:
 
 ```bash
-node ace invoke @mezielabs/adonis-stripe
+node ace configure @mezielabs/adonis-stripe
 ```
 
 This package needs to be configured with your Stripe account's API keys, which you can get from your [Stripe Dashboard](https://dashboard.stripe.com/account/apikeys). Also, you can specify the API version as well as your webhook secret.

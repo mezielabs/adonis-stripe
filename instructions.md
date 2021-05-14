@@ -3,9 +3,9 @@ The package has been configured successfully. The Adonis Stripe configuration st
 Open the `env.ts` file and paste the following code inside the `Env.rules` object.
 
 ```ts
-STRIPE_SECRET_KEY: Env.schema.string()
-STRIPE_PUBLIC_KEY: Env.schema.string()
-STRIPE_WEBHOOK_SECRET: Env.schema.string()
-STRIPE_API_VERSION: Env.schema.string()
-STRIPE_TYPESCRIPT: Env.schema.string()
+STRIPE_SECRET_KEY: Env.schema.string(),
+STRIPE_PUBLIC_KEY: Env.schema.string(),
+STRIPE_WEBHOOK_SECRET: Env.schema.string(),
+STRIPE_API_VERSION: Env.schema.string(),
+STRIPE_TYPESCRIPT: Env.schema.string(),
 ```
