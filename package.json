@@ -9,7 +9,7 @@
 		"clean": "del build",
 		"compile": "npm run lint && npm run clean && tsc",
 		"build": "npm run compile && npm run copyfiles",
-		"copyfiles": "copyfiles \"templates/**/*\" build",
+		"copyfiles": "copyfiles \"templates/**/*.txt\" \"instructions.md\" build",
 		"prepublishOnly": "npm run build",
 		"lint": "eslint . --ext=.ts",
 		"format": "prettier --write .",
@@ -34,7 +34,7 @@
 	},
 	"homepage": "https://github.com/mezielabs/adonis-stripe#readme",
 	"devDependencies": {
-		"@adonisjs/fold": "^6.3.5",
+		"@adonisjs/core": "^5.1.6",
 		"@adonisjs/mrm-preset": "^2.4.0",
 		"@types/node": "^14.0.24",
 		"commitizen": "^4.1.2",
@@ -74,7 +74,8 @@
 	"files": [
 		"build/adonis-typings",
 		"build/providers",
-		"build/templates"
+		"build/templates",
+		"build/instructions.md"
 	],
 	"types": "build/adonis-typings/index.d.ts",
 	"config": {
@@ -87,25 +88,21 @@
 		"anyBranch": false
 	},
 	"publishConfig": {
+		"tag": "latest",
 		"access": "public"
 	},
 	"adonisjs": {
+		"instructionsMd": "./build/instructions.md",
 		"types": "@mezielabs/adonis-stripe",
 		"providers": [
 			"@mezielabs/adonis-stripe"
 		],
 		"templates": {
 			"config": [
-				{
-					"src": "config/stripe.txt",
-					"dest": "stripe"
-				}
+				"stripe.txt"
 			],
 			"contracts": [
-				{
-					"src": "contract/stripe.txt",
-					"dest": "stripe"
-				}
+				"stripe.txt"
 			]
 		}
 	},

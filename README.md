@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of contents
+
+- [Adonis Stripe](#adonis-stripe)
+  - [Installation](#installation)
+  - [Usage](#usage)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Adonis Stripe
 
 > Stripe provider for AdonisJS 5
