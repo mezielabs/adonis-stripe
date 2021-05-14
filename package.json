@@ -1,6 +1,6 @@
 {
 	"name": "@mezielabs/adonis-stripe",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Stripe provider for AdonisJS",
 	"scripts": {
 		"mrm": "mrm --preset=@adonisjs/mrm-preset",
