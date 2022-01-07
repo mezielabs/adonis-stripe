@@ -7,9 +7,9 @@
 		"pretest": "npm run lint",
 		"test": "node japaFile.js",
 		"clean": "del build",
+		"copyfiles": "copyfiles \"templates/**/*.txt\" \"instructions.md\" build",
 		"compile": "npm run lint && npm run clean && tsc",
 		"build": "npm run compile && npm run copyfiles",
-		"copyfiles": "copyfiles \"templates/**/*.txt\" \"instructions.md\" build",
 		"prepublishOnly": "npm run build",
 		"lint": "eslint . --ext=.ts",
 		"format": "prettier --write .",
@@ -35,26 +35,26 @@
 	"homepage": "https://github.com/mezielabs/adonis-stripe#readme",
 	"devDependencies": {
 		"@adonisjs/core": "^5.1.6",
-		"@adonisjs/mrm-preset": "^2.4.0",
-		"@types/node": "^14.0.24",
+		"@adonisjs/mrm-preset": "^5.0.2",
+		"@types/node": "^17.0.8",
 		"commitizen": "^4.1.2",
 		"copyfiles": "^2.3.0",
 		"cz-conventional-changelog": "^3.2.0",
-		"del-cli": "^3.0.1",
-		"doctoc": "^1.4.0",
-		"eslint": "^7.5.0",
-		"eslint-config-prettier": "^6.11.0",
-		"eslint-plugin-adonis": "^1.0.14",
-		"eslint-plugin-prettier": "^3.1.4",
+		"del-cli": "^4.0.1",
+		"doctoc": "^2.1.0",
+		"eslint": "^8.6.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-adonis": "^2.1.0",
+		"eslint-plugin-prettier": "^4.0.0",
 		"github-label-sync": "^2.0.0",
-		"husky": "^4.2.5",
-		"japa": "^3.1.1",
-		"mrm": "^2.3.3",
-		"np": "^6.3.2",
+		"husky": "^7.0.4",
+		"japa": "^4.0.0",
+		"mrm": "^3.0.10",
+		"np": "^7.6.0",
 		"npm-audit-html": "^1.4.1",
 		"prettier": "^2.0.5",
-		"ts-node": "^8.10.2",
-		"typescript": "^3.9.7"
+		"ts-node": "^10.4.0",
+		"typescript": "^4.5.4"
 	},
 	"husky": {
 		"hooks": {
@@ -97,11 +97,18 @@
 			"@mezielabs/adonis-stripe"
 		],
 		"templates": {
+			"basePath": "./build/templates",
 			"config": [
-				"stripe.txt"
+				{
+					"src": "config/stripe.txt",
+					"dest": "stripe"
+				}
 			],
 			"contracts": [
-				"stripe.txt"
+				{
+					"src": "contracts/stripe.txt",
+					"dest": "stripe"
+				}
 			]
 		}
 	},
