@@ -58,6 +58,12 @@ async checkout ({ view }) {
 
 This package is built top of [`stripe-node`](https://github.com/stripe/stripe-node). For usage, see the [stripe-node API docs](https://stripe.com/docs/api?lang=node) for Node.js.
 
+
+## Learn AdonisJS
+
+Want to learn how to build projects like this with AdonisJS? Check out [Adonis Mastery](https://adonismastery.com), where you get to learn AdonisJS through practical screencasts.
+
+
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
 [typescript-url]:  "typescript"
 
