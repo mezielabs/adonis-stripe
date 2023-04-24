@@ -3,8 +3,9 @@
 ## Table of contents
 
 - [Adonis Stripe](#adonis-stripe)
-  - [Installation](#installation)
-  - [Usage](#usage)
+	- [Installation](#installation)
+	- [Usage](#usage)
+	- [Learn AdonisJS](#learn-adonisjs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -67,8 +68,8 @@ Want to learn how to build projects like this with AdonisJS? Check out [Adonis M
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
 [typescript-url]:  "typescript"
 
-[npm-image]: https://img.shields.io/npm/v/adonis-stripe.svg?style=for-the-badge&logo=npm
-[npm-url]: https://npmjs.org/package/adonis-stripe "npm"
+[npm-image]: https://img.shields.io/npm/v/@mezielabs/adonis-stripe.svg?style=for-the-badge&logo=npm
+[npm-url]: https://npmjs.org/package/@mezielabs/adonis-stripe "npm"
 
-[license-image]: https://img.shields.io/npm/l/adonis-stripe?color=blueviolet&style=for-the-badge
+[license-image]: https://img.shields.io/npm/l/@mezielabs/adonis-stripe?color=blueviolet&style=for-the-badge
 [license-url]: LICENSE.md "license"

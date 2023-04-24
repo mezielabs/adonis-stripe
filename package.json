@@ -107,7 +107,7 @@
 			]
 		}
 	},
-	"dependencies": {
-		"stripe": "^8.77.0"
+	"peerDependencies": {
+		"stripe": "^12.2.0"
 	}
 }
